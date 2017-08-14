@@ -1,0 +1,15 @@
+http://hsqldb.org/
+
+Steps to run:
+http://www.programmingforfuture.com/2010/06/using-hypersql-hsqldb.html
+
+
+
+Once you created database then you have to run the command same way as before with some extra arguments to connect with existing database e.g.
+
+hsqldb>java -classpath lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:hsqldb/directory --dbname.0 directory
+
+URL: jdbc:hsqldb:hsql://localhost/Directory
+User: SA
+Password: <BLANK>
+
