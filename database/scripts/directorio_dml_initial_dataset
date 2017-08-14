@@ -1,0 +1,18 @@
+insert into tbl_giro(id_giro, nombre_giro) values (1,'restaurantes');
+insert into tbl_pais(id_pais, nombre_pais) values(1,'Mexico');
+insert into tbl_estado(id_estado, nombre_estado, id_pais) values(1,'Nayarit',1);
+insert into tbl_ciudad values(1,'Tepic',1), (2,'Xalisco',1), (3,'Villa Hidalgo de Chipi',1);
+insert into tbl_dias_semana values
+(1,'Lunes'),
+(2,'Martes'),
+(3,'Miercoles'),
+(4,'Jueves'),
+(5,'Viernes'),
+(6,'Sabado'),
+(7,'Domingo');
+insert into tbl_empresa values
+(1,false,null,'Marietas Restaurante','Restaurante de Mariscos','3111234567',null,'Av del Valle',123,null,63112,'marieta@marieta.com',null,'www.marieta.com',1,1);
+insert into tbl_empresa values
+(2,false,null,'El Pollo Pepe - 2 de Agosto','Polleria','3112223344',null,'Av de los Insurgentes',1122,null,63119,'pollopepe@pollopepe.com',null,'www.elpollopepe.com',1,1);
+insert into tbl_empresa values
+(3,true,2,'El Pollo Pepe - Fovissste','Polleria','3112223355',null,'Av de los Insurgentes',777,null,63110,'pollopepe@pollopepe.com',null,'www.elpollopepe.com',1,1);
