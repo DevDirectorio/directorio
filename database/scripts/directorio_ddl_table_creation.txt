@@ -1,0 +1,74 @@
+CREATE TABLE TBL_PAIS
+(id_pais integer not null primary key,
+nombre_pais varchar(255) not null)
+
+create table tbl_estado(
+id_estado integer not null primary key,
+nombre_estado varchar(255) not null,
+id_pais integer not null,
+foreign key(id_pais) references tbl_pais(id_pais))
+
+create table tbl_ciudad(
+id_ciudad integer not null primary key,
+nombre_ciudad varchar(255) not null,
+id_estado integer not null,
+foreign key(id_estado) references tbl_estado(id_estado)
+)
+
+create table tbl_giro(
+id_giro integer not null primary key,
+nombre_giro varchar(255) not null
+)
+
+create table tbl_dias_semana(
+id_dia integer not null primary key,
+nombre_dia varchar(20) not null
+)
+
+CREATE TABLE TBL_empresa(
+id_empresa integer not null primary key,
+sucursal boolean not null,
+id_matriz integer,
+emp_nombre varchar(255) not null,
+emp_descripcion varchar(255),
+emp_telefono varchar(10) not null,
+emp_extension varchar(5),
+emp_calle varchar(50) not null,
+emp_numero_ext varchar(5) not null,
+emp_numero_int varchar(5),
+emp_codigo_postal varchar(5) not null,
+emp_email1 varchar(50),
+emp_email2 varchar(50),
+emp_pagina_web varchar(100),
+id_ciudad integer not null,
+id_giro integer not null,
+foreign key(id_matriz) references tbl_empresa(id_empresa),
+foreign key(id_ciudad) references tbl_ciudad(id_ciudad),
+foreign key(id_giro) references tbl_giro(id_giro)
+)
+
+create table tbl_contacto(
+id_contacto integer not null primary key,
+id_empresa integer not null,
+contacto_nombre varchar(255) not null,
+contacto_ap_paterno varchar(255) not null,
+contacto_ap_materno varchar(255),
+contacto_telefono varchar(10),
+contacto_celular varchar(10),
+contacto_email varchar(100) not null,
+foreign key(id_empresa) references tbl_empresa(id_empresa)
+)
+
+create table tbl_horario(
+id_empresa integer not null,
+id_dia integer not null,
+abierto boolean not null,
+hora_apertura1 varchar(4) not null,
+hora_cierre1 varchar(4) not null,
+hora_apertura2 varchar(4),
+hora_cierre2 varchar(4),
+primary key (id_empresa, id_dia),
+foreign key(id_empresa) references tbl_empresa(id_empresa),
+foreign key(id_dia) references tbl_dias_semana(id_dia)
+)
+)
